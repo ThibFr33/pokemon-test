@@ -1,0 +1,213 @@
+* {
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@font-face {
+  font-family : Pokemon;
+  src: url(/assets/fonts/Pokemon_GB.ttf);
+}
+.logo img {
+  position: absolute;
+  left:30%;
+  top:0%;
+  overflow: hidden;
+  transition: all 3s ease;
+}
+.logo > img {
+  width: 40%;
+  transition: all 1s ease;
+}
+.logo:hover img {
+  animation: pokeTitle 2s ease 0s 1 normal forwards;
+}
+@keyframes pokeTitle {
+	0% {
+		animation-timing-function: ease-in;
+		opacity: 1;
+		transform: translateY(-45px);
+	}
+
+	24% {
+		opacity: 1;
+	}
+
+	40% {
+		animation-timing-function: ease-in;
+		transform: translateY(-24px);
+	}
+
+	65% {
+		animation-timing-function: ease-in;
+		transform: translateY(-12px);
+	}
+
+	82% {
+		animation-timing-function: ease-in;
+		transform: translateY(-6px);
+	}
+
+	93% {
+		animation-timing-function: ease-in;
+		transform: translateY(-4px);
+	}
+
+	25%,
+	55%,
+	75%,
+	87% {
+		animation-timing-function: ease-out;
+		transform: translateY(0px);
+	}
+
+	100% {
+		animation-timing-function: ease-out;
+		opacity: 1;
+		transform: translateY(0px);
+	}
+}
+body{
+  /* width: 100vw; */
+  max-height: 100vh;
+  background-image: url("../images/poke-background.jpg");
+  background-size: cover;
+}
+.fade-in {
+  margin:  50rem auto 0;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.box {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 6s ease-in-out;
+  padding: 2rem;
+  gap: 2rem;
+}
+/* Image à gauche */
+.box img {
+  width: 40%;
+  height: auto;
+  max-width: 400px;
+  object-fit: contain;
+}
+/* Texte à droite */
+.card-evo {
+  background-color: rgba(255, 255, 255, 0.9);
+  border: double 3px black;
+  padding: 1em;
+  max-width: 300px;
+  font-size: 1.2rem;
+  text-align: left;
+  font-family: Pokemon;
+}
+/* Draco visible au début */
+.img1 {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 1;
+}
+/* Hover -> fade vers Dracolosse */
+.fade-in:hover .img1 {
+  opacity: 0;
+  pointer-events: none;
+  animation: draco 4s ease 0s 1 normal forwards;
+}
+@keyframes draco {
+	0% {
+    opacity:1}
+  20% {
+    opacity:0.8}
+	40% {
+    opacity:0.6}
+  60% {
+    opacity:0.4}
+  80% {
+    opacity:0.2
+  }
+
+	10%,
+	30%,
+  50%,
+  70%,
+  100% {
+		opacity: 0;
+	}
+}
+.fade-in:hover .img2 {
+  opacity: 1;
+  pointer-events: auto;
+  z-index: 2;
+  animation: dracolosse 4s ease 0s 1 normal forwards;
+}
+@keyframes dracolosse {
+	10% {
+    opacity:0.1}
+  30% {
+    opacity:0.3}
+	50% {
+    opacity:0.5
+  }
+  70% {
+    opacity:0.7}
+  100% {
+		opacity: 1;
+	}
+
+	0%,
+	20%,
+  40%,
+  60%,
+  80% {
+		opacity: 0;
+	}
+}
+
+
+
+
+
+/* #dracolosse {
+  width: 600px;
+  position: absolute;
+  top:10%;
+  left:32%;
+  display:block;
+}
+#draco {
+  width:400px;
+  position: absolute;
+  top:50%;
+  left:39%;
+  display: none;
+
+} */
+/* .card .card-img {
+  position: absolute;
+  left: 20%;
+  top: 3%;
+  width: auto;
+} */
+/* .card-evo.result {
+  display:block;
+} */
+
+/* .card:hover {
+  animation: fadeInOut 5s;
+  animation-iteration-count: infinite;
+  display: block;
+} */
+/* @keyframes fadeInOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+
+}
